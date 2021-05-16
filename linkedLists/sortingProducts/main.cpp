@@ -85,7 +85,6 @@ public:
             if (temp == n)
             {
                 prevNode->setNextNode(temp->getNextNode());
-                cout << "deleted " << temp->getData().getPrice() << endl;
                 delete temp;
                 break;
             }
@@ -163,11 +162,13 @@ int main()
     string name;
     double price;
     Store store;
-
     store.addProduct(Product(1, "a", 2));
     store.addProduct(Product(2, "b", 3));
     store.addProduct(Product(3, "c", 1));
+    cout << "Before sort:\n";
+    store.display();
     store.sort();
+    cout << "After sort:\n";
     store.display();
     return 0;
 }
