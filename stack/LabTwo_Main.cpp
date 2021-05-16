@@ -6,17 +6,17 @@ using namespace std;
 
 class Stack
 {
-	private:
-		int top;
-		int arr[5];
+private:
+	int top;
+	int arr[5];
 
-	public:
-		void push(int n);
-		int pop();
-		bool isFull();
-		bool isEmpty();
-		void display();
-		Stack();
+public:
+	void push(int n);
+	int pop();
+	bool isFull();
+	bool isEmpty();
+	void display();
+	Stack();
 };
 
 Stack::Stack()
@@ -28,10 +28,10 @@ void Stack::display()
 {
 	for (int i = 0; i <= top; i++)
 	{
-		cout << "items" << ":" << char(arr[i]) << endl;
+		cout << "items"
+			 << ":" << char(arr[i]) << endl;
 	}
 }
-
 
 void Stack::push(int n)
 {
@@ -44,7 +44,6 @@ void Stack::push(int n)
 	}
 	else
 		cout << "Stack is full" << endl;
-
 }
 int Stack::pop()
 {
@@ -58,8 +57,6 @@ int Stack::pop()
 	return popped;
 }
 
-
-
 bool Stack::isFull()
 {
 	if (top == 4)
@@ -68,7 +65,6 @@ bool Stack::isFull()
 	}
 	else
 		return false;
-
 }
 
 bool Stack::isEmpty()
@@ -79,19 +75,24 @@ bool Stack::isEmpty()
 	}
 	else
 		return false;
-
 }
 
-bool isBalanced(Stack s){
+bool isBalanced(Stack s)
+{
 	int x;
 	int balance = 0;
-	while(!s.isEmpty()){
+	while (!s.isEmpty())
+	{
 		x = s.pop();
-		if(char(x) == '(') balance++;
-		else if (char(x)==')') balance--; 
+		if (char(x) == '(')
+			balance++;
+		else if (char(x) == ')')
+			balance--;
 	};
-	if (balance!=0) return false;
-	else return true;
+	if (balance != 0)
+		return false;
+	else
+		return true;
 }
 
 int main()
@@ -101,7 +102,8 @@ int main()
 	char p;
 	int c;
 
-	do {
+	do
+	{
 
 		cout << "to push item enter 1" << endl;
 		cout << "to pop item enter 2" << endl;
@@ -132,17 +134,18 @@ int main()
 		case 4:
 			return 0;
 		case 5:
-			if (isBalanced(s)) cout << "BALANCED\n";
-			else cout << "NOT BALANCED :(\n";
+			if (isBalanced(s))
+				cout << "BALANCED\n";
+			else
+				cout << "NOT BALANCED :(\n";
 		}
 	} while (c != 4);
-
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
 
-// Tips for Getting Started: 
+// Tips for Getting Started:
 //   1. Use the Solution Explorer window to add/manage files
 //   2. Use the Team Explorer window to connect to source control
 //   3. Use the Output window to see build output and other messages
