@@ -5,7 +5,8 @@ using namespace std;
 // funtion to check if character is operator or not
 bool isOperator(char x)
 {
-	switch (x) {
+	switch (x)
+	{
 	case '+':
 	case '-':
 	case '/':
@@ -43,7 +44,8 @@ string preToPost(string pre_exp)
 		}
 
 		// if symbol is an operand
-		else {
+		else
+		{
 
 			// push the operand to the stack
 			s.push(string(1, pre_exp[i]));

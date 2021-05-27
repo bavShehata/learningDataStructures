@@ -44,7 +44,10 @@ int main()
     cout << endl;
     int count = 0;
     for (ite = flist.begin(); ite != flist.end(); ite++)
-        count++;
+        cout << *ite << " ";
     cout << count;
+    cout << endl
+         << flist.front() << endl
+         << flist.max_size();
     return 0;
 }
